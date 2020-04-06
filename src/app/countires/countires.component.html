@@ -1,0 +1,29 @@
+<h1>List of Countries</h1>
+<h1> Navigate to :
+  <a [routerLink]="['/Home']">Home</a> <br>
+  <a [routerLink]="['/Index']">Index</a>
+</h1>
+<table class="blueTable">
+  <thead>
+    <tr>
+      <th> Detail </th>
+      <th>Code</th>
+      <th>Name</th>     
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="4">
+        <div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a>
+          <a href="#">4</a> <a href="#">&raquo;</a></div>
+      </td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr *ngFor="let country of countries">
+      <td><a [routerLink]="['/Country', country.code]">Detail</a></td>
+      <td>{{country.code}}</td>
+      <td>{{country.name}}</td>
+    </tr>
+  </tbody>
+</table>
